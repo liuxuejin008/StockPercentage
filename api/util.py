@@ -6,6 +6,8 @@ from datetime import datetime, timedelta
 class Util:
     @staticmethod
     def get_percent(start_data, end_data, name):
+
+        print(name)
         # CREATE TICKER INSTANCE FOR AMAZON
         stock = yf.Ticker(name)
         # GET TODAYS DATE AND CONVERT IT TO A STRING WITH YYYY-MM-DD FORMAT (YFINANCE EXPECTS THAT FORMAT)
@@ -68,8 +70,5 @@ class Util:
         item1['Close'] = f'%.2f' % end_Close
         item1['Low'] = f'%.2f' % end_Low
         nlist.append(item1)
-        print(nlist)
         return nlist
 
-
-Util.get_percent("2023-06-01", "2023-09-02", "AAPL")

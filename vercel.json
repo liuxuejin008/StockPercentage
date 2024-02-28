@@ -21,7 +21,7 @@
   "rewrites": [
     {
       "source": "/",
-      "destination": "/api/index"
+      "destination": "/index.html"
     },
     {
       "source": "/stock",
