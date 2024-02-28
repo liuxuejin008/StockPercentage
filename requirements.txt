@@ -1,2 +1,3 @@
 yfinance~=0.2.37
 sanic==22.9.0
+websockets==10.0
