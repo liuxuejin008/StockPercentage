@@ -60,7 +60,7 @@ class Util:
         item['Close'] = f'%.2f' % start_Close
         item['Low'] = f'%.2f' % start_Low
         nlist = []
-        list.append(item)
+        nlist.append(item)
         item1 = dict()
         item1['end_data'] = end_data
         item1['Open'] = f'%.2f' % end_open
