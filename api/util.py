@@ -4,13 +4,28 @@ from datetime import datetime, timedelta
 
 
 class Util:
+
+    @staticmethod
+    def get_indate_price(indate,code):
+        stock = yf.Ticker(code)
+        date = datetime.strptime(indate, "%Y-%m-%d")
+        new_date = date + timedelta(days=1)
+        new_date_str = new_date.strftime("%Y-%m-%d")
+        history = stock.history(start=indate, end=new_date_str)
+        df = pd.DataFrame(history, columns=['Open', 'High', 'Low', 'Close'])
+
+        start_open = 0
+        start_Close = 0
+        for index, row in df.iterrows():
+            start_open = row['Open']
+            start_Close = row['Close']
+        return start_open,start_Close,new_date_str
     @staticmethod
     def get_percent(start_data, end_data, name):
         # CREATE TICKER INSTANCE FOR AMAZON
         stock = yf.Ticker(name)
         # GET TODAYS DATE AND CONVERT IT TO A STRING WITH YYYY-MM-DD FORMAT (YFINANCE EXPECTS THAT FORMAT)
         end_date = datetime.now().strftime('%Y-%m-%d')
-
         date = datetime.strptime(start_data, "%Y-%m-%d")
         new_date = date + timedelta(days=1)
         new_date_str = new_date.strftime("%Y-%m-%d")
@@ -69,4 +84,5 @@ class Util:
         item1['Low'] = f'%.2f' % end_Low
         nlist.append(item1)
         return nlist
+
 
