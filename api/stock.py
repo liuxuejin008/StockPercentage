@@ -41,7 +41,7 @@ async def stock(request):
     return json({"list": nlist})
 
 
-@app.post('/returns')
+@app.get('/returns')
 async def stock(request):
     code = request.form.get("code")
     if not code:
