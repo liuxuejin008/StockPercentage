@@ -26,6 +26,10 @@
     {
       "source": "/stock",
       "destination": "/api/stock"
+    },
+    {
+      "source": "/returns",
+      "destination": "/api/stock"
     }
   ]
 }
