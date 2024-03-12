@@ -3,8 +3,6 @@ from sanic.response import json
 from sqlalchemy import create_engine, Column, Integer, String, Double
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
-from api.util import Util
-
 app = Sanic("stock")
 
 # 创建SQLite数据库引擎
@@ -35,5 +33,20 @@ async def returns(request):
     code = request.form.get("code")
     if not code:
         code = "AAPL"
-    list = session.query(Returns).filter_by(code=code)
-    return json({"list": list})
+    list = session.query(Returns).filter_by(code=code).all()
+    print(list)
+    print(type(list))
+    nlist = []
+    for r in list:
+        item = dict()
+        item['id'] = r.id
+        item['name'] = r.name
+        item['code'] = r.code
+        item['start'] = f'%.2f' % r.start
+        item['end'] = f'%.2f' % r.end
+        nlist.append(item)
+    return json({"nlist": nlist})
+
+
+#if __name__ == "__main__":
+    #app.run(host="0.0.0.0", port=8088)
