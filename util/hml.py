@@ -4,7 +4,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 # 创建SQLite数据库引擎
-engine = create_engine('sqlite:///stock.db', echo=True)
+engine = create_engine('sqlite:///stockName.db', echo=True)
 
 # 创建基类
 Base = declarative_base()

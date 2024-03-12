@@ -29,7 +29,7 @@
     },
     {
       "source": "/returns",
-      "destination": "/api/stock"
+      "destination": "/api/returns"
     }
   ]
 }
