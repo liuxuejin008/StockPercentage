@@ -42,7 +42,7 @@ async def stock(request):
 
 
 @app.get('/returns')
-async def stock(request):
+async def returns(request):
     code = request.form.get("code")
     if not code:
         code = "AAPL"
