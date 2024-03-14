@@ -50,7 +50,7 @@ async def returns(request):
 
 
 @app.get('/test')
-async def returns():
+async def returns(request):
     return json({"code": 0})
 
 
