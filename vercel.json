@@ -29,7 +29,7 @@
     },
     {
       "source": "/returns/(.*)",
-      "destination": "/api/returns"
+      "destination": "api/returns.py"
     }
 
   ]
