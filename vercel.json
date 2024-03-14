@@ -28,8 +28,8 @@
       "destination": "/api/stock"
     },
     {
-      "source": "/returns/(.*)",
-      "destination": "api/returns.py"
+      "source": "/returns",
+      "destination": "/api/returns.py"
     }
 
   ]
