@@ -9,7 +9,6 @@ async def stock(request):
     start_date = request.form.get("startDate")
     end_data = request.form.get("endDate")
     name = request.form.get("name")
-    print("--------")
     if not name:
         name = "AAPL"
     nlist = Util.get_percent(start_date, end_data, name)
