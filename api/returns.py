@@ -48,5 +48,11 @@ async def returns(request):
     return json({"nlist": nlist})
 
 
+
+@app.get('/test')
+async def returns():
+    return json({"code": 0})
+
+
 #if __name__ == "__main__":
     #app.run(host="0.0.0.0", port=8088)

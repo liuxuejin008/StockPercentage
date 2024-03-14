@@ -28,8 +28,9 @@
       "destination": "/api/stock"
     },
     {
-      "source": "/returns",
+      "source": "/returns/(.*)",
       "destination": "/api/returns"
     }
+
   ]
 }

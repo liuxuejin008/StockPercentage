@@ -14,6 +14,8 @@ async def stock(request):
     nlist = Util.get_percent(start_date, end_data, name)
     return json({"list": nlist})
 
-
+@app.get('/test')
+async def test():
+    return json({"list": "1212211212"})
 # if __name__ == "__main__":
 # app.run(host="0.0.0.0", port=8088)
